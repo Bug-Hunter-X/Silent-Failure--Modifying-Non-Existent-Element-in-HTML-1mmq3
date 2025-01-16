@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug Solution</title>
+</head>
+<body>
+  <div id="myDiv">
+    This text should be visible.
+  </div>
+  <script>
+    // Correct way: Check if the element exists before attempting modification
+    const element = document.getElementById('myDiv');
+    if (element) {
+      element.innerHTML = "Text changed successfully!";
+    } else {
+      console.error("Element with ID 'myDiv' not found.");
+    }
+    // another solution is to use a try catch block:
+    try{
+        document.getElementById('nonExistentElement').innerHTML = "This text will not be visible";
+    }catch(e){
+        console.error(e);
+    }
+  </script>
+</body>
+</html>
